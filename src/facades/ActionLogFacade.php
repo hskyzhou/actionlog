@@ -1,5 +1,5 @@
 <?php 
-	namespace Hsky\Actionlog\Facades;
+	namespace Xezw211\Actionlog\Facades;
 
 	use Illuminate\Support\Facades\Facade;
 

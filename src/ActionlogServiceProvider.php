@@ -1,5 +1,5 @@
 <?php 
-	namespace Hsky\Actionlog;
+	namespace Xezw211\Actionlog;
 
 	use Illuminate\Support\ServiceProvider;
 
