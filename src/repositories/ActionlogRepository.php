@@ -1,5 +1,5 @@
 <?php
-	namespace Xezw211\Actionlog\Repositories;
+	namespace Hsky\Actionlog\Repositories;
 	use DB;
 	class ActionlogRepository{
 		public function test(){
