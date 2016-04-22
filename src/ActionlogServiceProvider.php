@@ -17,7 +17,7 @@
 	        	__DIR__.'/config/actionlog.php' => config_path('actionlog.php'),
 	        ], 'config');
 	    }
-
+     
 	    public function register(){
 	 		$this->app->bind('actionlogfacade', function($app){
 	 			return new \Hsky\Actionlog\Repositories\ActionlogRepository();
