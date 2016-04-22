@@ -1,6 +1,6 @@
 {
     "name": "hsky/actionlog",
-    "description": "The helper class for Laravel 4 applications to get record user log and api log",
+    "description": "The helper class for Laravel 5 applications to get record user log and api log",
     "license": "MIT",
     "authors": [
         {
