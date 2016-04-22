@@ -1,10 +1,19 @@
 {
     "name": "hsky/actionlog",
+    "description": "The helper class for Laravel 4 applications to get record user log and api log",
+    "license": "MIT",
     "authors": [
         {
             "name": "hsky",
             "email": "xezw211@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+    	"php": ">=5.5.9"
+    },
+    "autoload": {
+    "psr-4": {
+      "Hsky\\Actionlog\\": "src/",
+    }
+  }
 }
