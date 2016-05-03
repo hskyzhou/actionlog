@@ -30,18 +30,36 @@
 				json_encode($new_data),
 				isset($option['content']) ? $option['content'] : '',
 				isset($option['module']) ? $option['module'] : '',
+				isset($option['action_sql']) ? $option['action_sql'] : '',
 				isset($option['reset_sql']) ? $option['reset_sql'] : '',
 				isset($option['group']) ? $option['group'] : '',
 				request()->ip(),
 			];
 
 			try {
-				$sql = "insert into " . config('actionlog.userlog') . " (`uid`, `action`, `old_data`, `new_data`, `content`, `module`, `reset_sql`, `group`, `ip`) values (?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+				$sql = "insert into " . config('actionlog.userlog') . " (`uid`, `action`, `old_data`, `new_data`, `content`, `module`, `action_sql`, `reset_sql`, `group`, `ip`) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
 				return DB::insert($sql, $userLogData);
 			} catch (Exception $e) {
 				\Log::error("用户行为日志记录失败");
 				return false;
 			}
+		}
+
+		/*select行为*/
+		public function writeUserSelectLog($old_data = '', $new_data = '', $option = []){
+			$this->writeUserLog('select', $old_data, $new_data, $option);
+		}
+		/*insert行为*/
+		public function writeUserInsertLog(){
+			$this->writeUserLog('insert', $old_data, $new_data, $option);
+		}
+		/*update行为*/
+		public function writeUserUpdateLog(){
+			$this->writeUserLog('update', $old_data, $new_data, $option);
+		}
+		/*delete行为*/
+		public function writeUserDeleteLog(){
+			$this->writeUserLog('delete', $old_data, $new_data, $option);
 		}
 
 		/**
