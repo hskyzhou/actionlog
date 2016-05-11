@@ -23,6 +23,7 @@ class CreateUserLog extends Migration
             $table->text('action_sql')->comment('操作的sql语句');
             $table->text('reset_sql')->comment('重置的sql语句');
             $table->string('group')->comment('日志属于一组');
+            $table->string('result', 7)->comment('操作是成功还是失败, success, error');
             $table->string('ip', 16)->comment('IP地址');
             $table->timestamps();
         });

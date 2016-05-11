@@ -15,7 +15,7 @@
 		 * @date		2016-04-21 16:38:40
 		 * @return		
 		 */
-		public function writeUserLog($action = '', $old_data = '', $new_data = '', $option=[]){
+		public function writeUserLog($action = '', $result = 'success', $option=[]){
 			$uid = '';
 			if(isset($option['uid'])){
 				$uid = $option['uid'];
@@ -26,8 +26,8 @@
 			$userLogData = [
 				$uid,
 				$action,
-				json_encode($old_data),
-				json_encode($new_data),
+				json_encode($option['old_data']),
+				json_encode($option['new_data']),
 				isset($option['content']) ? $option['content'] : '',
 				isset($option['module']) ? $option['module'] : '',
 				isset($option['action_sql']) ? $option['action_sql'] : '',
@@ -46,20 +46,20 @@
 		}
 
 		/*select行为*/
-		public function writeUserSelectLog($old_data = '', $new_data = '', $option = []){
-			$this->writeUserLog('select', $old_data, $new_data, $option);
+		public function writeUserSelectLog($result, $option = []){
+			$this->writeUserLog('select', $result, $option);
 		}
 		/*insert行为*/
 		public function writeUserInsertLog(){
-			$this->writeUserLog('insert', $old_data, $new_data, $option);
+			$this->writeUserLog('insert', $result, $option);
 		}
 		/*update行为*/
 		public function writeUserUpdateLog(){
-			$this->writeUserLog('update', $old_data, $new_data, $option);
+			$this->writeUserLog('update', $result, $option);
 		}
 		/*delete行为*/
 		public function writeUserDeleteLog(){
-			$this->writeUserLog('delete', $old_data, $new_data, $option);
+			$this->writeUserLog('delete', $result, $option);
 		}
 
 		/**
