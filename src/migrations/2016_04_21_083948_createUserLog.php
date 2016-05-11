@@ -19,7 +19,7 @@ class CreateUserLog extends Migration
             $table->text('new_data')->comment('操作后数据');
             $table->integer('uid')->comment('操作者');
             $table->string('content')->comment('操作内容');
-            $table->string('module', 50)->comment('操作模块');
+            $table->string('module')->comment('操作模块');
             $table->text('action_sql')->comment('操作的sql语句');
             $table->text('reset_sql')->comment('重置的sql语句');
             $table->string('group')->comment('日志属于一组');
