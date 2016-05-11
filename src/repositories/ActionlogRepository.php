@@ -50,15 +50,15 @@
 			$this->writeUserLog('select', $result, $option);
 		}
 		/*insert行为*/
-		public function writeUserInsertLog(){
+		public function writeUserInsertLog($result, $option = []){
 			$this->writeUserLog('insert', $result, $option);
 		}
 		/*update行为*/
-		public function writeUserUpdateLog(){
+		public function writeUserUpdateLog($result, $option = []){
 			$this->writeUserLog('update', $result, $option);
 		}
 		/*delete行为*/
-		public function writeUserDeleteLog(){
+		public function writeUserDeleteLog($result, $option = []){
 			$this->writeUserLog('delete', $result, $option);
 		}
 
